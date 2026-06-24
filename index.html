@@ -6,16 +6,16 @@
  <title>OpenCut 中文社区 - 免费开源视频编辑器</title>
  <meta name="description" content="OpenCut 中文社区 - 免费开源的 CapCut/剪映替代品。提供中文文档、教程、汉化版、模板素材。">
  <meta name="keywords" content="OpenCut,视频编辑,开源,免费,剪映替代,CapCut替代,中文社区">
- <style>
-   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-   body {
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-     background: #0a0a0a;
-     color: #e0e0e0;
-     line-height: 1.6;
-   }
-   a { color: #60a5fa; text-decoration: none; }
-   a:hover { color: #93c5fd; }
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.6;
+  }
+  a { color: #60a5fa; text-decoration: none; }
+  a:hover { color: #93c5fd; }
 
    /* Hero */
    .hero {
@@ -88,22 +88,52 @@
      border-bottom: 1px solid #1f2937;
    }
 
-   /* Cards */
-   .cards {
-     display: grid;
-     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-     gap: 16px;
-   }
-   .card {
-     background: #111;
-     border: 1px solid #1f2937;
-     border-radius: 8px;
-     padding: 24px;
-     transition: border-color 0.2s;
-   }
-   .card:hover { border-color: #374151; }
-   .card h3 { font-size: 1.05rem; color: #f3f4f6; margin-bottom: 8px; }
-   .card p { font-size: 0.9rem; color: #9ca3af; }
+  /* Cards */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: #111;
+    border: 1px solid #1f2937;
+    border-radius: 8px;
+    padding: 24px;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: #374151; }
+  .card h3 { font-size: 1.05rem; color: #f3f4f6; margin-bottom: 8px; }
+  .card p { font-size: 0.9rem; color: #9ca3af; }
+
+  /* Badges (网络可达性标识) */
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+    letter-spacing: 0.3px;
+  }
+  .badge-warn  { background: #422006; color: #fbbf24; border: 1px solid #78350f; }
+  .badge-block { background: #450a0a; color: #fca5a5; border: 1px solid #7f1d1d; }
+  .badge-ok    { background: #052e16; color: #86efac; border: 1px solid #14532d; }
+  .badge-soon  { background: #1e293b; color: #93c5fd; border: 1px solid #1e3a8a; }
+
+  /* Notice banner */
+  .notice {
+    max-width: 720px;
+    margin: 24px auto 0;
+    padding: 12px 20px;
+    background: #1c1917;
+    border: 1px solid #44403c;
+    border-left: 3px solid #fbbf24;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #d6d3d1;
+  }
+  .notice strong { color: #fbbf24; }
 
    /* Timeline */
    .timeline { list-style: none; }
@@ -146,16 +176,20 @@
  </head>
  <body>
 
- <!-- Hero -->
- <section class="hero">
-   <h1><span>OpenCut</span> 中文社区</h1>
-   <p>免费、开源的视频编辑器，CapCut / 剪映的开源替代品。支持 Web、桌面和移动端。</p>
-   <div class="cta">
-     <a href="https://opencut.app" class="btn btn-primary" target="_blank" rel="noopener">立即使用</a>
-     <a href="#docs" class="btn btn-outline">查看文档</a>
-     <a href="#community" class="btn btn-outline">加入社区</a>
-   </div>
- </section>
+<!-- Hero -->
+<section class="hero">
+  <h1><span>OpenCut</span> 中文社区</h1>
+  <p>免费、开源的视频编辑器，CapCut / 剪映的开源替代品。支持 Web、桌面和移动端。</p>
+  <div class="cta">
+    <a href="https://opencut.app" class="btn btn-primary" target="_blank" rel="noopener">立即使用（海外站）</a>
+    <a href="#docs" class="btn btn-outline">查看文档</a>
+    <a href="#community" class="btn btn-outline">加入社区</a>
+  </div>
+  <div class="notice">
+    <strong>国内访问提示</strong>：OpenCut 官方站点和 GitHub 在国内访问较慢或不稳定。
+    我们正在筹备<strong>国内镜像站</strong>和<strong>官方汉化版</strong>，敬请期待。
+  </div>
+</section>
 
  <!-- Stats -->
  <div class="stats">
@@ -173,28 +207,36 @@
    </div>
  </div>
 
- <!-- 快速开始 -->
- <section class="section" id="docs">
-   <h2>快速开始</h2>
-   <div class="cards">
-     <a href="https://opencut.app" target="_blank" rel="noopener" class="card">
-       <h3>在线使用</h3>
-       <p>直接打开 opencut.app，无需安装，浏览器即用。</p>
-     </a>
-     <a href="https://github.com/OpenCut-app/OpenCut" target="_blank" rel="noopener" class="card">
-       <h3>查看源码</h3>
-       <p>GitHub 上查看源代码，了解项目架构和技术栈。</p>
-     </a>
-     <a href="https://github.com/OpenCut-app/OpenCut-classic" target="_blank" rel="noopener" class="card">
-       <h3>Classic 版本</h3>
-       <p>当前稳定版本，基于 Next.js + Rust WASM 构建。</p>
-     </a>
-     <div class="card">
-       <h3>中文文档</h3>
-       <p>正在翻译中，即将上线完整的中文使用指南和开发文档。</p>
-     </div>
-   </div>
- </section>
+<!-- 快速开始 -->
+<section class="section" id="docs">
+  <h2>快速开始</h2>
+  <div class="cards">
+    <a href="https://opencut.app" target="_blank" rel="noopener" class="card">
+      <h3>在线使用<span class="badge badge-warn">海外站 · 国内访问慢</span></h3>
+      <p>官方站点 opencut.app，无需安装，浏览器即用。国内访问较慢，建议科学上网。</p>
+    </a>
+    <div class="card">
+      <h3>国内镜像站<span class="badge badge-soon">筹备中</span></h3>
+      <p>正在国内服务器上部署 OpenCut 镜像站，让国内用户也能秒开使用。</p>
+    </div>
+    <a href="docs/README.html" class="card">
+      <h3>中文文档<span class="badge badge-ok">国内可访问</span></h3>
+      <p>OpenCut 项目介绍、安装指南和使用说明的中文版本。</p>
+    </a>
+    <a href="docs/FAQ.html" class="card">
+      <h3>常见问题<span class="badge badge-ok">国内可访问</span></h3>
+      <p>新手最关心的问题汇总，看完这一篇基本就上手了。</p>
+    </a>
+    <a href="https://bgithub.xyz/OpenCut-app/OpenCut" target="_blank" rel="noopener" class="card">
+      <h3>查看源码<span class="badge badge-ok">国内镜像</span></h3>
+      <p>通过 GitHub 镜像访问源代码（bgithub.xyz），国内速度更快。</p>
+    </a>
+    <a href="https://kkgithub.com/OpenCut-app/OpenCut-classic" target="_blank" rel="noopener" class="card">
+      <h3>Classic 版本<span class="badge badge-ok">国内镜像</span></h3>
+      <p>当前稳定版本源码，基于 Next.js + Rust WASM 构建。</p>
+    </a>
+  </div>
+</section>
 
  <!-- 项目动态 -->
  <section class="section">
@@ -223,28 +265,28 @@
    </ul>
  </section>
 
- <!-- 社区 -->
- <section class="section" id="community">
-   <h2>加入社区</h2>
-   <div class="cards">
-     <a href="https://discord.gg/zmR9N35cjK" target="_blank" rel="noopener" class="card">
-       <h3>官方 Discord</h3>
-       <p>加入官方 Discord 社区，与开发者和全球用户交流。</p>
-     </a>
-     <a href="https://github.com/OpenCut-app/OpenCut/issues" target="_blank" rel="noopener" class="card">
-       <h3>GitHub Issues</h3>
-       <p>报告 Bug、提出功能建议、参与技术讨论。</p>
-     </a>
-     <div class="card">
-       <h3>微信交流群</h3>
-       <p>中文用户专属微信群，扫码加入。（即将开放）</p>
-     </div>
-     <div class="card">
-       <h3>QQ 群</h3>
-       <p>中文用户 QQ 群，方便文件分享和技术交流。（即将开放）</p>
-     </div>
-   </div>
- </section>
+<!-- 社区 -->
+<section class="section" id="community">
+  <h2>加入社区</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>微信交流群<span class="badge badge-soon">即将开放</span></h3>
+      <p>中文用户专属微信群，发布动态、答疑解惑、分享作品。扫码即将上线。</p>
+    </div>
+    <div class="card">
+      <h3>QQ 群<span class="badge badge-soon">即将开放</span></h3>
+      <p>中文用户 QQ 群，方便文件分享和技术交流。群号即将公布。</p>
+    </div>
+    <a href="https://bgithub.xyz/OpenCut-app/OpenCut/issues" target="_blank" rel="noopener" class="card">
+      <h3>GitHub Issues<span class="badge badge-ok">国内镜像</span></h3>
+      <p>通过镜像访问 GitHub Issues，报告 Bug、提建议、参与技术讨论。</p>
+    </a>
+    <a href="https://discord.gg/zmR9N35cjK" target="_blank" rel="noopener" class="card">
+      <h3>官方 Discord<span class="badge badge-block">需科学上网</span></h3>
+      <p>OpenCut 官方 Discord，与开发者和全球用户交流。国内无法直接访问。</p>
+    </a>
+  </div>
+</section>
 
  <!-- 贡献 -->
  <section class="section">
@@ -269,16 +311,16 @@
    </div>
  </section>
 
- <footer>
-   <p>OpenCut 中文社区 · 非官方社区 · OpenCut 采用 <a href="https://github.com/OpenCut-app/OpenCut/blob/main/LICENSE" target="_blank" rel="noopener">MIT 协议</a></p>
-   <p style="margin-top:8px;">
-     <a href="https://github.com/OpenCut-app/OpenCut" target="_blank" rel="noopener">GitHub</a>
-     &nbsp;·&nbsp;
-     <a href="https://x.com/opencutapp" target="_blank" rel="noopener">Twitter/X</a>
-     &nbsp;·&nbsp;
-     <a href="https://discord.gg/zmR9N35cjK" target="_blank" rel="noopener">Discord</a>
-   </p>
- </footer>
+<footer>
+  <p>OpenCut 中文社区 · 非官方社区 · OpenCut 采用 <a href="https://bgithub.xyz/OpenCut-app/OpenCut/blob/main/LICENSE" target="_blank" rel="noopener">MIT 协议</a></p>
+  <p style="margin-top:8px;">
+    <a href="https://bgithub.xyz/OpenCut-app/OpenCut" target="_blank" rel="noopener">GitHub 镜像</a>
+    &nbsp;·&nbsp;
+    <a href="https://x.com/opencutapp" target="_blank" rel="noopener">Twitter/X</a>
+    &nbsp;·&nbsp;
+    <a href="https://discord.gg/zmR9N35cjK" target="_blank" rel="noopener">Discord</a>
+  </p>
+</footer>
 
  </body>
  </html>
