@@ -1,0 +1,284 @@
+ <!DOCTYPE html>
+ <html lang="zh-CN">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>OpenCut 中文社区 - 免费开源视频编辑器</title>
+ <meta name="description" content="OpenCut 中文社区 - 免费开源的 CapCut/剪映替代品。提供中文文档、教程、汉化版、模板素材。">
+ <meta name="keywords" content="OpenCut,视频编辑,开源,免费,剪映替代,CapCut替代,中文社区">
+ <style>
+   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+   body {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+     background: #0a0a0a;
+     color: #e0e0e0;
+     line-height: 1.6;
+   }
+   a { color: #60a5fa; text-decoration: none; }
+   a:hover { color: #93c5fd; }
+
+   /* Hero */
+   .hero {
+     text-align: center;
+     padding: 80px 20px 60px;
+     background: linear-gradient(180deg, #111 0%, #0a0a0a 100%);
+   }
+   .hero h1 {
+     font-size: 2.8rem;
+     font-weight: 700;
+     color: #fff;
+     margin-bottom: 12px;
+     letter-spacing: -0.5px;
+   }
+   .hero h1 span { color: #60a5fa; }
+   .hero p {
+     font-size: 1.15rem;
+     color: #9ca3af;
+     max-width: 600px;
+     margin: 0 auto 32px;
+   }
+   .hero .cta {
+     display: inline-flex;
+     gap: 12px;
+     flex-wrap: wrap;
+     justify-content: center;
+   }
+   .btn {
+     display: inline-block;
+     padding: 12px 28px;
+     border-radius: 8px;
+     font-size: 0.95rem;
+     font-weight: 600;
+     transition: all 0.2s;
+   }
+   .btn-primary {
+     background: #2563eb;
+     color: #fff;
+   }
+   .btn-primary:hover { background: #1d4ed8; color: #fff; }
+   .btn-outline {
+     border: 1px solid #374151;
+     color: #d1d5db;
+   }
+   .btn-outline:hover { border-color: #60a5fa; color: #60a5fa; }
+
+   /* Stats */
+   .stats {
+     display: flex;
+     justify-content: center;
+     gap: 48px;
+     padding: 40px 20px;
+     border-bottom: 1px solid #1f2937;
+   }
+   .stat { text-align: center; }
+   .stat-num { font-size: 1.8rem; font-weight: 700; color: #fff; }
+   .stat-label { font-size: 0.85rem; color: #6b7280; margin-top: 4px; }
+
+   /* Sections */
+   .section {
+     max-width: 960px;
+     margin: 0 auto;
+     padding: 60px 20px;
+   }
+   .section h2 {
+     font-size: 1.5rem;
+     color: #fff;
+     margin-bottom: 24px;
+     padding-bottom: 12px;
+     border-bottom: 1px solid #1f2937;
+   }
+
+   /* Cards */
+   .cards {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+     gap: 16px;
+   }
+   .card {
+     background: #111;
+     border: 1px solid #1f2937;
+     border-radius: 8px;
+     padding: 24px;
+     transition: border-color 0.2s;
+   }
+   .card:hover { border-color: #374151; }
+   .card h3 { font-size: 1.05rem; color: #f3f4f6; margin-bottom: 8px; }
+   .card p { font-size: 0.9rem; color: #9ca3af; }
+
+   /* Timeline */
+   .timeline { list-style: none; }
+   .timeline li {
+     padding: 16px 0 16px 24px;
+     border-left: 2px solid #1f2937;
+     position: relative;
+   }
+   .timeline li::before {
+     content: '';
+     position: absolute;
+     left: -5px;
+     top: 22px;
+     width: 8px;
+     height: 8px;
+     border-radius: 50%;
+     background: #2563eb;
+   }
+   .timeline li.done::before { background: #22c55e; }
+   .timeline .phase { font-size: 0.8rem; color: #6b7280; }
+   .timeline .title { font-size: 1rem; color: #f3f4f6; font-weight: 600; }
+   .timeline .desc { font-size: 0.85rem; color: #9ca3af; margin-top: 4px; }
+
+   /* Footer */
+   footer {
+     text-align: center;
+     padding: 40px 20px;
+     border-top: 1px solid #1f2937;
+     color: #6b7280;
+     font-size: 0.85rem;
+   }
+   footer a { color: #9ca3af; }
+
+   @media (max-width: 640px) {
+     .hero h1 { font-size: 2rem; }
+     .stats { gap: 24px; }
+     .cards { grid-template-columns: 1fr; }
+   }
+ </style>
+ </head>
+ <body>
+
+ <!-- Hero -->
+ <section class="hero">
+   <h1><span>OpenCut</span> 中文社区</h1>
+   <p>免费、开源的视频编辑器，CapCut / 剪映的开源替代品。支持 Web、桌面和移动端。</p>
+   <div class="cta">
+     <a href="https://opencut.app" class="btn btn-primary" target="_blank" rel="noopener">立即使用</a>
+     <a href="#docs" class="btn btn-outline">查看文档</a>
+     <a href="#community" class="btn btn-outline">加入社区</a>
+   </div>
+ </section>
+
+ <!-- Stats -->
+ <div class="stats">
+   <div class="stat">
+     <div class="stat-num">59,000+</div>
+     <div class="stat-label">GitHub Stars</div>
+   </div>
+   <div class="stat">
+     <div class="stat-num">MIT</div>
+     <div class="stat-label">开源协议</div>
+   </div>
+   <div class="stat">
+     <div class="stat-num">全平台</div>
+     <div class="stat-label">Web / 桌面 / 移动</div>
+   </div>
+ </div>
+
+ <!-- 快速开始 -->
+ <section class="section" id="docs">
+   <h2>快速开始</h2>
+   <div class="cards">
+     <a href="https://opencut.app" target="_blank" rel="noopener" class="card">
+       <h3>在线使用</h3>
+       <p>直接打开 opencut.app，无需安装，浏览器即用。</p>
+     </a>
+     <a href="https://github.com/OpenCut-app/OpenCut" target="_blank" rel="noopener" class="card">
+       <h3>查看源码</h3>
+       <p>GitHub 上查看源代码，了解项目架构和技术栈。</p>
+     </a>
+     <a href="https://github.com/OpenCut-app/OpenCut-classic" target="_blank" rel="noopener" class="card">
+       <h3>Classic 版本</h3>
+       <p>当前稳定版本，基于 Next.js + Rust WASM 构建。</p>
+     </a>
+     <div class="card">
+       <h3>中文文档</h3>
+       <p>正在翻译中，即将上线完整的中文使用指南和开发文档。</p>
+     </div>
+   </div>
+ </section>
+
+ <!-- 项目动态 -->
+ <section class="section">
+   <h2>项目动态</h2>
+   <ul class="timeline">
+     <li class="done">
+       <div class="phase">2025-06</div>
+       <div class="title">OpenCut 正式开源</div>
+       <div class="desc">首日即获大量关注，成为 GitHub 热门项目。</div>
+     </li>
+     <li class="done">
+       <div class="phase">2026-05</div>
+       <div class="title">宣布全面重写</div>
+       <div class="desc">从零重构架构：Rust 核心 + 插件系统 + MCP Server + 全平台支持。</div>
+     </li>
+     <li>
+       <div class="phase">2026-06</div>
+       <div class="title">中文社区启动</div>
+       <div class="desc">我们开始建设中文社区，提供文档翻译、教程和本地化支持。</div>
+     </li>
+     <li>
+       <div class="phase">即将到来</div>
+       <div class="title">新版发布</div>
+       <div class="desc">插件系统、MCP Server、桌面/移动端、AI 集成等重磅功能。</div>
+     </li>
+   </ul>
+ </section>
+
+ <!-- 社区 -->
+ <section class="section" id="community">
+   <h2>加入社区</h2>
+   <div class="cards">
+     <a href="https://discord.gg/zmR9N35cjK" target="_blank" rel="noopener" class="card">
+       <h3>官方 Discord</h3>
+       <p>加入官方 Discord 社区，与开发者和全球用户交流。</p>
+     </a>
+     <a href="https://github.com/OpenCut-app/OpenCut/issues" target="_blank" rel="noopener" class="card">
+       <h3>GitHub Issues</h3>
+       <p>报告 Bug、提出功能建议、参与技术讨论。</p>
+     </a>
+     <div class="card">
+       <h3>微信交流群</h3>
+       <p>中文用户专属微信群，扫码加入。（即将开放）</p>
+     </div>
+     <div class="card">
+       <h3>QQ 群</h3>
+       <p>中文用户 QQ 群，方便文件分享和技术交流。（即将开放）</p>
+     </div>
+   </div>
+ </section>
+
+ <!-- 贡献 -->
+ <section class="section">
+   <h2>参与贡献</h2>
+   <div class="cards">
+     <div class="card">
+       <h3>翻译文档</h3>
+       <p>帮助翻译 OpenCut 文档为中文，让更多国内用户受益。</p>
+     </div>
+     <div class="card">
+       <h3>制作教程</h3>
+       <p>录制视频教程或撰写图文教程，帮助新手快速上手。</p>
+     </div>
+     <div class="card">
+       <h3>开发插件</h3>
+       <p>新版发布后，为 OpenCut 开发插件和模板。</p>
+     </div>
+     <div class="card">
+       <h3>反馈建议</h3>
+       <p>在 GitHub Issues 中提交你的使用反馈和改进建议。</p>
+     </div>
+   </div>
+ </section>
+
+ <footer>
+   <p>OpenCut 中文社区 · 非官方社区 · OpenCut 采用 <a href="https://github.com/OpenCut-app/OpenCut/blob/main/LICENSE" target="_blank" rel="noopener">MIT 协议</a></p>
+   <p style="margin-top:8px;">
+     <a href="https://github.com/OpenCut-app/OpenCut" target="_blank" rel="noopener">GitHub</a>
+     &nbsp;·&nbsp;
+     <a href="https://x.com/opencutapp" target="_blank" rel="noopener">Twitter/X</a>
+     &nbsp;·&nbsp;
+     <a href="https://discord.gg/zmR9N35cjK" target="_blank" rel="noopener">Discord</a>
+   </p>
+ </footer>
+
+ </body>
+ </html>
