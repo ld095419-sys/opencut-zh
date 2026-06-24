@@ -1,0 +1,88 @@
+ <!DOCTYPE html>
+ <html lang="zh-CN">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>OpenCut 中文文档 - OpenCut 中文社区</title>
+ <style>
+   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+   body {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+     background: #0a0a0a; color: #e0e0e0; line-height: 1.75;
+   }
+   a { color: #60a5fa; text-decoration: none; }
+   a:hover { color: #93c5fd; text-decoration: underline; }
+   .nav { padding: 16px 20px; border-bottom: 1px solid #1f2937; }
+   .nav a { color: #9ca3af; font-size: 0.9rem; }
+   article { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+   h1 { font-size: 2.2rem; color: #fff; margin-bottom: 8px; }
+   h2 { font-size: 1.4rem; color: #f3f4f6; margin: 36px 0 14px; padding-bottom: 8px; border-bottom: 1px solid #1f2937; }
+   h3 { font-size: 1.1rem; color: #e5e7eb; margin: 24px 0 10px; }
+   p, li { color: #d1d5db; margin-bottom: 12px; }
+   ul, ol { padding-left: 24px; }
+   code {
+     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+     background: #1f2937; padding: 2px 6px; border-radius: 4px;
+     font-size: 0.88em; color: #fbbf24;
+   }
+   pre {
+     background: #0f172a; border: 1px solid #1f2937; border-radius: 8px;
+     padding: 16px; overflow-x: auto; margin: 16px 0;
+   }
+   pre code { background: none; padding: 0; color: #e0e7ff; }
+   blockquote {
+     border-left: 3px solid #2563eb; padding: 8px 16px;
+     background: #0f172a; color: #9ca3af; margin: 16px 0; border-radius: 4px;
+   }
+   .meta { color: #6b7280; font-size: 0.9rem; margin-bottom: 32px; }
+   footer { text-align: center; padding: 32px; border-top: 1px solid #1f2937; color: #6b7280; font-size: 0.85rem; }
+ </style>
+ </head>
+ <body>
+
+ <nav class="nav">
+   <a href="../index.html">← 返回首页</a>
+ </nav>
+
+ <article>
+   <h1>OpenCut 中文文档</h1>
+   <div class="meta">翻译自 OpenCut 官方 README · 最后更新：2026-06-24</div>
+
+   <h2>关于 OpenCut</h2>
+   <p>OpenCut 是一个免费、开源的视频编辑器，支持 Web、桌面和移动端。</p>
+
+   <h2>项目状态</h2>
+   <p><strong>OpenCut 正在从零开始重写。</strong>新版将带来：</p>
+   <ul>
+     <li><strong>编辑器 API</strong> — 可编程的视频编辑接口</li>
+     <li><strong>插件系统</strong> — 第三方插件作为一等公民</li>
+     <li><strong>一套代码，全平台运行</strong> — 基于 Rust 核心，覆盖桌面、移动端和浏览器</li>
+     <li><strong>MCP 服务器</strong> — 供 AI 智能体调用</li>
+     <li><strong>无头模式</strong> — 自动化、批量渲染</li>
+     <li><strong>编辑器内嵌脚本面板</strong> — 直接在编辑器中编写和运行脚本</li>
+   </ul>
+   <p>你仍然可以在 <a href="https://bgithub.xyz/opencut-app/opencut-classic" target="_blank" rel="noopener">opencut-app/opencut-classic</a>（GitHub 镜像）找到旧版本，这也是目前可以使用的版本。<a href="https://opencut.app" target="_blank" rel="noopener">opencut.app</a> 目前运行的是 classic 版本；重写版本将先在 new.opencut.app 上线，直到准备好替代旧版。</p>
+
+   <h2>本地开发</h2>
+   <p>首先安装 <a href="https://moonrepo.dev/proto" target="_blank" rel="noopener">proto</a>（如果还没有）：</p>
+   <pre><code>bash &lt;(curl -fsSL https://moonrepo.dev/install/proto.sh)</code></pre>
+   <p>在项目根目录下：</p>
+   <pre><code>proto use    # 安装 .prototools 中指定的 bun + moon 版本
+ bun install</code></pre>
+   <p>启动开发服务器：</p>
+   <pre><code>moon run web:dev   # 前端 → localhost:5173
+ moon run api:dev   # 后端 → localhost:8787</code></pre>
+
+   <h2>参与贡献</h2>
+   <p>目前架构还在设计中，暂未开放外部贡献。如果你想关注进展、提问或交流，可以加入我们的中文社区，或访问官方 Discord（需科学上网）。</p>
+
+   <h2>开源协议</h2>
+   <p><a href="https://bgithub.xyz/OpenCut-app/OpenCut/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a></p>
+ </article>
+
+ <footer>
+   <p>OpenCut 中文社区 · 非官方社区</p>
+ </footer>
+
+ </body>
+ </html>
