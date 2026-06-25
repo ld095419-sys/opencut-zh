@@ -22,13 +22,7 @@ a:hover { color: #93c5fd; }
 .btn-outline:hover { border-color: #60a5fa; color: #60a5fa; }
 .subscribe { max-width: 480px; margin: 40px auto 0; text-align: center; }
 .subscribe p { font-size: 0.9rem; color: #9ca3af; margin-bottom: 12px; }
-.subscribe-form { display: flex; gap: 8px; max-width: 400px; margin: 0 auto; }
-.subscribe-form input { flex: 1; padding: 10px 14px; border: 1px solid #374151; border-radius: 8px; background: #1a1a1a; color: #e0e0e0; font-size: 0.9rem; outline: none; }
-.subscribe-form input:focus { border-color: #2563eb; }
-.subscribe-form input::placeholder { color: #4b5563; }
-.subscribe-form button { padding: 10px 20px; background: #2563eb; color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
-.subscribe-form button:hover { background: #1d4ed8; }
-.subscribe-thanks { display: none; font-size: 0.9rem; color: #86efac; margin-top: 12px; }
+
 .stats { display: flex; justify-content: center; gap: 48px; padding: 40px 20px; border-bottom: 1px solid #1f2937; }
 .stat { text-align: center; }
 .stat-num { font-size: 1.8rem; font-weight: 700; color: #fff; }
@@ -68,12 +62,9 @@ footer a { color: #9ca3af; }
     <a href="#docs" class="btn btn-outline">查看文档</a>
   </div>
   <div class="subscribe">
-    <p>留下邮箱，新版发布时第一个通知你：</p>
-    <form class="subscribe-form" id="subscribeForm" action="https://wj.qq.com/s2/27140067/98a7/" method="get" target="_blank">
-      <input type="email" id="emailInput" placeholder="your@email.com" required>
-      <button type="submit">打开问卷订阅</button>
-    </form>
-    <p class="subscribe-thanks" id="subscribeThanks">请在打开的问卷页面中填写邮箱完成订阅。</p>
+    <p>新版发布时第一时间通知你：</p>
+    <a href="https://wj.qq.com/s2/27140067/98a7/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1.05rem;padding:14px 36px;">📬 打开问卷，留下邮箱</a>
+    <p style="margin-top:16px;font-size:0.85rem;color:#6b7280;">或直接联系 QQ：<strong style="color:#60a5fa;">1528966432</strong></p>
   </div>
   <div class="notice">
     <strong>项目状态</strong>：OpenCut 正在从零重写（Rust 核心 + 插件系统 + 全平台支持）。
