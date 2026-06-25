@@ -1,224 +1,95 @@
- <!DOCTYPE html>
- <html lang="zh-CN">
- <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>OpenCut 中文社区 - 免费开源视频编辑器</title>
- <meta name="description" content="OpenCut 中文社区 - 免费开源的 CapCut/剪映替代品。提供中文文档、教程、汉化版、模板素材。">
- <meta name="keywords" content="OpenCut,视频编辑,开源,免费,剪映替代,CapCut替代,中文社区">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenCut 中文社区 - 免费开源视频编辑器</title>
+<meta name="description" content="OpenCut 中文社区 - 免费开源的 CapCut/剪映替代品。提供中文文档、FAQ、项目动态跟踪。">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    background: #0a0a0a;
-    color: #e0e0e0;
-    line-height: 1.6;
-  }
-  a { color: #60a5fa; text-decoration: none; }
-  a:hover { color: #93c5fd; }
-
-   /* Hero */
-   .hero {
-     text-align: center;
-     padding: 80px 20px 60px;
-     background: linear-gradient(180deg, #111 0%, #0a0a0a 100%);
-   }
-   .hero h1 {
-     font-size: 2.8rem;
-     font-weight: 700;
-     color: #fff;
-     margin-bottom: 12px;
-     letter-spacing: -0.5px;
-   }
-   .hero h1 span { color: #60a5fa; }
-   .hero p {
-     font-size: 1.15rem;
-     color: #9ca3af;
-     max-width: 600px;
-     margin: 0 auto 32px;
-   }
-   .hero .cta {
-     display: inline-flex;
-     gap: 12px;
-     flex-wrap: wrap;
-     justify-content: center;
-   }
-   .btn {
-     display: inline-block;
-     padding: 12px 28px;
-     border-radius: 8px;
-     font-size: 0.95rem;
-     font-weight: 600;
-     transition: all 0.2s;
-   }
-   .btn-primary {
-     background: #2563eb;
-     color: #fff;
-   }
-   .btn-primary:hover { background: #1d4ed8; color: #fff; }
-   .btn-outline {
-     border: 1px solid #374151;
-     color: #d1d5db;
-   }
-   .btn-outline:hover { border-color: #60a5fa; color: #60a5fa; }
-
-   /* Stats */
-   .stats {
-     display: flex;
-     justify-content: center;
-     gap: 48px;
-     padding: 40px 20px;
-     border-bottom: 1px solid #1f2937;
-   }
-   .stat { text-align: center; }
-   .stat-num { font-size: 1.8rem; font-weight: 700; color: #fff; }
-   .stat-label { font-size: 0.85rem; color: #6b7280; margin-top: 4px; }
-
-   /* Sections */
-   .section {
-     max-width: 960px;
-     margin: 0 auto;
-     padding: 60px 20px;
-   }
-   .section h2 {
-     font-size: 1.5rem;
-     color: #fff;
-     margin-bottom: 24px;
-     padding-bottom: 12px;
-     border-bottom: 1px solid #1f2937;
-   }
-
-  /* Cards */
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
-  }
-  .card {
-    background: #111;
-    border: 1px solid #1f2937;
-    border-radius: 8px;
-    padding: 24px;
-    transition: border-color 0.2s;
-  }
-  .card:hover { border-color: #374151; }
-  .card h3 { font-size: 1.05rem; color: #f3f4f6; margin-bottom: 8px; }
-  .card p { font-size: 0.9rem; color: #9ca3af; }
-
-  /* Badges (网络可达性标识) */
-  .badge {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 500;
-    padding: 2px 8px;
-    border-radius: 4px;
-    margin-left: 6px;
-    vertical-align: middle;
-    letter-spacing: 0.3px;
-  }
-  .badge-warn  { background: #422006; color: #fbbf24; border: 1px solid #78350f; }
-  .badge-block { background: #450a0a; color: #fca5a5; border: 1px solid #7f1d1d; }
-  .badge-ok    { background: #052e16; color: #86efac; border: 1px solid #14532d; }
-  .badge-soon  { background: #1e293b; color: #93c5fd; border: 1px solid #1e3a8a; }
-
-  /* Notice banner */
-  .notice {
-    max-width: 720px;
-    margin: 24px auto 0;
-    padding: 12px 20px;
-    background: #1c1917;
-    border: 1px solid #44403c;
-    border-left: 3px solid #fbbf24;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    color: #d6d3d1;
-  }
-  .notice strong { color: #fbbf24; }
-
-   /* Timeline */
-   .timeline { list-style: none; }
-   .timeline li {
-     padding: 16px 0 16px 24px;
-     border-left: 2px solid #1f2937;
-     position: relative;
-   }
-   .timeline li::before {
-     content: '';
-     position: absolute;
-     left: -5px;
-     top: 22px;
-     width: 8px;
-     height: 8px;
-     border-radius: 50%;
-     background: #2563eb;
-   }
-   .timeline li.done::before { background: #22c55e; }
-   .timeline .phase { font-size: 0.8rem; color: #6b7280; }
-   .timeline .title { font-size: 1rem; color: #f3f4f6; font-weight: 600; }
-   .timeline .desc { font-size: 0.85rem; color: #9ca3af; margin-top: 4px; }
-
-   /* Footer */
-   footer {
-     text-align: center;
-     padding: 40px 20px;
-     border-top: 1px solid #1f2937;
-     color: #6b7280;
-     font-size: 0.85rem;
-   }
-   footer a { color: #9ca3af; }
-
-   @media (max-width: 640px) {
-     .hero h1 { font-size: 2rem; }
-     .stats { gap: 24px; }
-     .cards { grid-template-columns: 1fr; }
-   }
- </style>
- </head>
- <body>
-
-<!-- Hero -->
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
+a { color: #60a5fa; text-decoration: none; }
+a:hover { color: #93c5fd; }
+.hero { text-align: center; padding: 80px 20px 60px; background: linear-gradient(180deg, #111 0%, #0a0a0a 100%); }
+.hero h1 { font-size: 2.8rem; font-weight: 700; color: #fff; margin-bottom: 12px; letter-spacing: -0.5px; }
+.hero h1 span { color: #60a5fa; }
+.hero p { font-size: 1.15rem; color: #9ca3af; max-width: 600px; margin: 0 auto 32px; }
+.hero .cta { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.btn { display: inline-block; padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; transition: all 0.2s; }
+.btn-primary { background: #2563eb; color: #fff; }
+.btn-primary:hover { background: #1d4ed8; color: #fff; }
+.btn-outline { border: 1px solid #374151; color: #d1d5db; }
+.btn-outline:hover { border-color: #60a5fa; color: #60a5fa; }
+.subscribe { max-width: 480px; margin: 40px auto 0; text-align: center; }
+.subscribe p { font-size: 0.9rem; color: #9ca3af; margin-bottom: 12px; }
+.subscribe-form { display: flex; gap: 8px; max-width: 400px; margin: 0 auto; }
+.subscribe-form input { flex: 1; padding: 10px 14px; border: 1px solid #374151; border-radius: 8px; background: #1a1a1a; color: #e0e0e0; font-size: 0.9rem; outline: none; }
+.subscribe-form input:focus { border-color: #2563eb; }
+.subscribe-form input::placeholder { color: #4b5563; }
+.subscribe-form button { padding: 10px 20px; background: #2563eb; color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.subscribe-form button:hover { background: #1d4ed8; }
+.subscribe-thanks { display: none; font-size: 0.9rem; color: #86efac; margin-top: 12px; }
+.stats { display: flex; justify-content: center; gap: 48px; padding: 40px 20px; border-bottom: 1px solid #1f2937; }
+.stat { text-align: center; }
+.stat-num { font-size: 1.8rem; font-weight: 700; color: #fff; }
+.stat-label { font-size: 0.85rem; color: #6b7280; margin-top: 4px; }
+.section { max-width: 960px; margin: 0 auto; padding: 60px 20px; }
+.section h2 { font-size: 1.5rem; color: #fff; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid #1f2937; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.card { background: #111; border: 1px solid #1f2937; border-radius: 8px; padding: 24px; transition: border-color 0.2s; }
+.card:hover { border-color: #374151; }
+.card h3 { font-size: 1.05rem; color: #f3f4f6; margin-bottom: 8px; }
+.card p { font-size: 0.9rem; color: #9ca3af; }
+.badge { display: inline-block; font-size: 0.7rem; font-weight: 500; padding: 2px 8px; border-radius: 4px; margin-left: 6px; vertical-align: middle; }
+.badge-warn  { background: #422006; color: #fbbf24; border: 1px solid #78350f; }
+.badge-block { background: #450a0a; color: #fca5a5; border: 1px solid #7f1d1d; }
+.badge-ok    { background: #052e16; color: #86efac; border: 1px solid #14532d; }
+.badge-soon  { background: #1e293b; color: #93c5fd; border: 1px solid #1e3a8a; }
+.notice { max-width: 720px; margin: 24px auto 0; padding: 12px 20px; background: #1c1917; border: 1px solid #44403c; border-left: 3px solid #fbbf24; border-radius: 6px; font-size: 0.85rem; color: #d6d3d1; }
+.notice strong { color: #fbbf24; }
+.timeline { list-style: none; }
+.timeline li { padding: 16px 0 16px 24px; border-left: 2px solid #1f2937; position: relative; }
+.timeline li::before { content: ''; position: absolute; left: -5px; top: 22px; width: 8px; height: 8px; border-radius: 50%; background: #2563eb; }
+.timeline li.done::before { background: #22c55e; }
+.timeline .phase { font-size: 0.8rem; color: #6b7280; }
+.timeline .title { font-size: 1rem; color: #f3f4f6; font-weight: 600; }
+.timeline .desc { font-size: 0.85rem; color: #9ca3af; margin-top: 4px; }
+footer { text-align: center; padding: 40px 20px; border-top: 1px solid #1f2937; color: #6b7280; font-size: 0.85rem; }
+footer a { color: #9ca3af; }
+@media (max-width: 640px) { .hero h1 { font-size: 2rem; } .stats { gap: 24px; } .cards { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
 <section class="hero">
   <h1><span>OpenCut</span> 中文社区</h1>
-  <p>免费、开源的视频编辑器，CapCut / 剪映的开源替代品。支持 Web、桌面和移动端。</p>
+  <p>免费、开源的视频编辑器，CapCut / 剪映的开源替代品。<br>新版正在重写中，我们会在第一时间通知你。</p>
   <div class="cta">
-    <a href="https://opencut.app" class="btn btn-primary" target="_blank" rel="noopener">立即使用（海外站）</a>
+    <a href="https://opencut.app" class="btn btn-outline" target="_blank" rel="noopener">试用旧版（海外站）</a>
     <a href="#docs" class="btn btn-outline">查看文档</a>
-    <a href="#community" class="btn btn-outline">加入社区</a>
+  </div>
+  <div class="subscribe">
+    <p>留下邮箱，新版发布时第一个通知你：</p>
+    <form class="subscribe-form" id="subscribeForm" onsubmit="handleSubscribe(event)">
+      <input type="email" id="emailInput" placeholder="your@email.com" required>
+      <button type="submit">订阅通知</button>
+    </form>
+    <p class="subscribe-thanks" id="subscribeThanks">已收到！新版发布时我们会第一时间通知你。</p>
   </div>
   <div class="notice">
-    <strong>国内访问提示</strong>：OpenCut 官方站点和 GitHub 在国内访问较慢或不稳定。
-    我们正在筹备<strong>国内镜像站</strong>和<strong>官方汉化版</strong>，敬请期待。
+    <strong>项目状态</strong>：OpenCut 正在从零重写（Rust 核心 + 插件系统 + 全平台支持）。
+    目前旧版可访问，但功能有限。新版发布后我们将提供<strong>汉化版</strong>和<strong>国内镜像站</strong>。
   </div>
 </section>
 
- <!-- Stats -->
- <div class="stats">
-   <div class="stat">
-     <div class="stat-num">59,000+</div>
-     <div class="stat-label">GitHub Stars</div>
-   </div>
-   <div class="stat">
-     <div class="stat-num">MIT</div>
-     <div class="stat-label">开源协议</div>
-   </div>
-   <div class="stat">
-     <div class="stat-num">全平台</div>
-     <div class="stat-label">Web / 桌面 / 移动</div>
-   </div>
- </div>
+<div class="stats">
+  <div class="stat"><div class="stat-num">59,000+</div><div class="stat-label">GitHub Stars</div></div>
+  <div class="stat"><div class="stat-num">MIT</div><div class="stat-label">开源协议</div></div>
+  <div class="stat"><div class="stat-num">全平台</div><div class="stat-label">Web / 桌面 / 移动</div></div>
+</div>
 
-<!-- 快速开始 -->
 <section class="section" id="docs">
   <h2>快速开始</h2>
   <div class="cards">
-    <a href="https://opencut.app" target="_blank" rel="noopener" class="card">
-      <h3>在线使用<span class="badge badge-warn">海外站 · 国内访问慢</span></h3>
-      <p>官方站点 opencut.app，无需安装，浏览器即用。国内访问较慢，建议科学上网。</p>
-    </a>
-    <div class="card">
-      <h3>国内镜像站<span class="badge badge-soon">筹备中</span></h3>
-      <p>正在国内服务器上部署 OpenCut 镜像站，让国内用户也能秒开使用。</p>
-    </div>
     <a href="docs/README.html" class="card">
       <h3>中文文档<span class="badge badge-ok">国内可访问</span></h3>
       <p>OpenCut 项目介绍、安装指南和使用说明的中文版本。</p>
@@ -226,6 +97,10 @@
     <a href="docs/FAQ.html" class="card">
       <h3>常见问题<span class="badge badge-ok">国内可访问</span></h3>
       <p>新手最关心的问题汇总，看完这一篇基本就上手了。</p>
+    </a>
+    <a href="https://opencut.app" target="_blank" rel="noopener" class="card">
+      <h3>试用旧版<span class="badge badge-warn">海外站</span></h3>
+      <p>官方站点 opencut.app，浏览器即用。国内访问较慢，新版即将到来。</p>
     </a>
     <a href="https://bgithub.xyz/OpenCut-app/OpenCut" target="_blank" rel="noopener" class="card">
       <h3>查看源码<span class="badge badge-ok">国内镜像</span></h3>
@@ -238,44 +113,42 @@
   </div>
 </section>
 
- <!-- 项目动态 -->
- <section class="section">
-   <h2>项目动态</h2>
-   <ul class="timeline">
-     <li class="done">
-       <div class="phase">2025-06</div>
-       <div class="title">OpenCut 正式开源</div>
-       <div class="desc">首日即获大量关注，成为 GitHub 热门项目。</div>
-     </li>
-     <li class="done">
-       <div class="phase">2026-05</div>
-       <div class="title">宣布全面重写</div>
-       <div class="desc">从零重构架构：Rust 核心 + 插件系统 + MCP Server + 全平台支持。</div>
-     </li>
-     <li>
-       <div class="phase">2026-06</div>
-       <div class="title">中文社区启动</div>
-       <div class="desc">我们开始建设中文社区，提供文档翻译、教程和本地化支持。</div>
-     </li>
-     <li>
-       <div class="phase">即将到来</div>
-       <div class="title">新版发布</div>
-       <div class="desc">插件系统、MCP Server、桌面/移动端、AI 集成等重磅功能。</div>
-     </li>
-   </ul>
- </section>
+<section class="section">
+  <h2>项目动态</h2>
+  <ul class="timeline">
+    <li class="done">
+      <div class="phase">2025-06</div>
+      <div class="title">OpenCut 正式开源</div>
+      <div class="desc">首日即获大量关注，成为 GitHub 热门项目。</div>
+    </li>
+    <li class="done">
+      <div class="phase">2026-05</div>
+      <div class="title">宣布全面重写</div>
+      <div class="desc">从零重构架构：Rust 核心 + 插件系统 + MCP Server + 全平台支持。</div>
+    </li>
+    <li>
+      <div class="phase">2026-06</div>
+      <div class="title">中文站上线</div>
+      <div class="desc">中文文档和 FAQ 上线，持续跟踪项目进展，为国内用户提供第一手中文信息。</div>
+    </li>
+    <li>
+      <div class="phase">即将到来</div>
+      <div class="title">新版发布</div>
+      <div class="desc">插件系统、MCP Server、桌面/移动端、AI 集成等重磅功能。</div>
+    </li>
+  </ul>
+</section>
 
-<!-- 社区 -->
 <section class="section" id="community">
-  <h2>加入社区</h2>
+  <h2>保持联系</h2>
   <div class="cards">
     <div class="card">
-      <h3>微信交流群<span class="badge badge-soon">即将开放</span></h3>
-      <p>中文用户专属微信群，发布动态、答疑解惑、分享作品。扫码即将上线。</p>
+      <h3>邮件通知<span class="badge badge-ok">已开放</span></h3>
+      <p>新版发布、汉化版上线、重要更新，第一时间邮件通知你。在页面顶部订阅。</p>
     </div>
     <div class="card">
-      <h3>QQ 群<span class="badge badge-soon">即将开放</span></h3>
-      <p>中文用户 QQ 群，方便文件分享和技术交流。群号即将公布。</p>
+      <h3>微信群 / QQ群<span class="badge badge-soon">新版发布后开放</span></h3>
+      <p>等新版正式发布后，我们会建立中文用户群，方便交流、分享模板和教程。</p>
     </div>
     <a href="https://bgithub.xyz/OpenCut-app/OpenCut/issues" target="_blank" rel="noopener" class="card">
       <h3>GitHub Issues<span class="badge badge-ok">国内镜像</span></h3>
@@ -288,28 +161,15 @@
   </div>
 </section>
 
- <!-- 贡献 -->
- <section class="section">
-   <h2>参与贡献</h2>
-   <div class="cards">
-     <div class="card">
-       <h3>翻译文档</h3>
-       <p>帮助翻译 OpenCut 文档为中文，让更多国内用户受益。</p>
-     </div>
-     <div class="card">
-       <h3>制作教程</h3>
-       <p>录制视频教程或撰写图文教程，帮助新手快速上手。</p>
-     </div>
-     <div class="card">
-       <h3>开发插件</h3>
-       <p>新版发布后，为 OpenCut 开发插件和模板。</p>
-     </div>
-     <div class="card">
-       <h3>反馈建议</h3>
-       <p>在 GitHub Issues 中提交你的使用反馈和改进建议。</p>
-     </div>
-   </div>
- </section>
+<section class="section">
+  <h2>参与贡献</h2>
+  <div class="cards">
+    <div class="card"><h3>翻译文档</h3><p>帮助翻译 OpenCut 文档为中文，让更多国内用户受益。</p></div>
+    <div class="card"><h3>制作教程</h3><p>录制视频教程或撰写图文教程，帮助新手快速上手。</p></div>
+    <div class="card"><h3>开发插件</h3><p>新版发布后，为 OpenCut 开发插件和模板。</p></div>
+    <div class="card"><h3>反馈建议</h3><p>在 GitHub Issues 中提交你的使用反馈和改进建议。</p></div>
+  </div>
+</section>
 
 <footer>
   <p>OpenCut 中文社区 · 非官方社区 · OpenCut 采用 <a href="https://bgithub.xyz/OpenCut-app/OpenCut/blob/main/LICENSE" target="_blank" rel="noopener">MIT 协议</a></p>
@@ -322,5 +182,22 @@
   </p>
 </footer>
 
- </body>
- </html>
+<script>
+function handleSubscribe(e) {
+  e.preventDefault();
+  var email = document.getElementById('emailInput').value.trim();
+  if (!email) return;
+  try {
+    var subs = JSON.parse(localStorage.getItem('opencut_subscribers') || '[]');
+    if (subs.indexOf(email) === -1) {
+      subs.push(email);
+      localStorage.setItem('opencut_subscribers', JSON.stringify(subs));
+    }
+  } catch(ignore) {}
+  document.getElementById('subscribeForm').style.display = 'none';
+  document.getElementById('subscribeThanks').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
