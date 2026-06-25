@@ -69,11 +69,11 @@ footer a { color: #9ca3af; }
   </div>
   <div class="subscribe">
     <p>留下邮箱，新版发布时第一个通知你：</p>
-    <form class="subscribe-form" id="subscribeForm" onsubmit="handleSubscribe(event)">
+    <form class="subscribe-form" id="subscribeForm" action="https://wj.qq.com/s2/27140067/98a7/" method="get" target="_blank">
       <input type="email" id="emailInput" placeholder="your@email.com" required>
-      <button type="submit">订阅通知</button>
+      <button type="submit">打开问卷订阅</button>
     </form>
-    <p class="subscribe-thanks" id="subscribeThanks">已收到！新版发布时我们会第一时间通知你。</p>
+    <p class="subscribe-thanks" id="subscribeThanks">请在打开的问卷页面中填写邮箱完成订阅。</p>
   </div>
   <div class="notice">
     <strong>项目状态</strong>：OpenCut 正在从零重写（Rust 核心 + 插件系统 + 全平台支持）。
@@ -182,22 +182,7 @@ footer a { color: #9ca3af; }
   </p>
 </footer>
 
-<script>
-function handleSubscribe(e) {
-  e.preventDefault();
-  var email = document.getElementById('emailInput').value.trim();
-  if (!email) return;
-  try {
-    var subs = JSON.parse(localStorage.getItem('opencut_subscribers') || '[]');
-    if (subs.indexOf(email) === -1) {
-      subs.push(email);
-      localStorage.setItem('opencut_subscribers', JSON.stringify(subs));
-    }
-  } catch(ignore) {}
-  document.getElementById('subscribeForm').style.display = 'none';
-  document.getElementById('subscribeThanks').style.display = 'block';
-}
-</script>
+
 
 </body>
 </html>
